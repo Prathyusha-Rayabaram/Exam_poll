@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Login here:</h1>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="container">
+                    <label for="firstname"><b>Firstname:</b></label>
+                    <input type="text" name="firstname" placeholder="firstname">
+            </div>
+            <div class="container">
+                    <label for="lastname"><b>Lastname:</b></label>
+                    <input type="text" name="lastname" placeholder="lastname">
+            </div>
+            <div class="container">
+                    <label for="email"><b>Email:</b></label>
+                    <input type="text" name="email" placeholder="email">
+            </div>
+            <div class="container">
+                    <label for="phonenumber"><b>Phonenumber:</b></label>
+                    <input type="text" name="phonenumber" placeholder="phonenumber">
+            </div>
+            <div class="container">
+                <label for="username"><b>Username:</b></label>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="container">
+                <label for="password"><b>Password:</b></label>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <div class="container">
+                    <label for="confirm_password"><b>Confirm_password:</b></label>
+                    <input type="password" name="confirm_password" placeholder="confirm_password">
+            </div>
+            <input type="submit" name="" value="Register">
+           
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

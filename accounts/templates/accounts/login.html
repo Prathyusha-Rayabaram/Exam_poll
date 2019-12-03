@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Login here:</h1>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="container">
+                <label for="username"><b>Username:</b></label>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="container">
+                <label for="password"><b>Password:</b></label>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <input type="submit" name="" value="Login">
+            <div class="container">
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+           
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
